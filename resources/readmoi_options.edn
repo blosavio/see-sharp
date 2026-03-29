@@ -1,0 +1,40 @@
+{:sections [{:section-name "Quick summary" :section-href "quick"}
+            {:section-name "Setup"}
+            {:section-name "API" :section-href "https://blosavio.github.io/see-sharp/index.html" :skip-section-load? true}
+            {:section-name "Changelog" :section-href "https://github.com/blosavio/chlog/blob/main/changelog.md" :skip-section-load? true}
+            ;;{:section-name "Introduction" :section-href "intro"}
+            ;;{:section-name "Ideas" :section-href "ideas"}
+            {:section-name "Usage" :section-href "usage"}
+            ;;{:section-name "Possibilities" :section-href "possibilities"}
+            ;;{:section-name "Critique" :section-href "critique"}
+            {:section-name "Alternatives" :section-href "alternatives"}
+            ;;{:section-name "Examples" :section-href "examples"}
+            {:section-name "Glossary" :section-href "glossary"}
+            {:section-name "Contact" :section-href "https://github.com/blosavio" :skip-section-load? true}]
+
+ :clojars-badge? true
+ :copyright-holder "Brad Losavio"
+
+ ;; special directives to zprint on how to handle these functions
+ :fn-map-additions {}
+
+ :project-description "A slightly faster implementation of Clojure's `select-keys`"
+ :project-name-formatted "See-sharp"
+
+ :preferred-project-metadata :lein
+
+ :readme-UUID #uuid "e8a546fe-1f02-4eea-97a1-e87219c93c0a"
+
+ :readme-html-directory "doc/"
+ :readme-html-filename "readme.html"
+
+ :readme-markdown-directory ""
+ :readme-markdown-filename "README.md"
+
+ :sections-directory "resources/readme_sections/"
+
+ :separator " => "
+ :wrap-at 80
+
+ :tidy-html? true}
+

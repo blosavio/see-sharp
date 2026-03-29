@@ -1,13 +1,4 @@
-(defproject com.sagevisuals/see-sharp
-  #_"select-keys"
-  #_"fselect-keys-1"
-  #_"fselect-keys-2"
-  #_"fselect-keys-3"
-  #_"fselect-keys-4"
-  #_"fselect-keys-5"
-  #_"fselect-keys-6"
-
-  "0-SNAPSHOT0"
+(defproject com.sagevisuals/see-sharp "0-SNAPSHOT0"
   :description "A slightly faster implementation of Clojure's `select-keys`"
   :url "https://github.com/blosavio/see-sharp"
   :license {:name "MIT License"

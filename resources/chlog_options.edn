@@ -1,0 +1,15 @@
+{:project-formatted-name "See-sharp"
+ :copyright-holder "Brad Losavio"
+
+ :changelog-UUID #uuid "62b7fbbe-5912-4428-8e7c-674de45b86a9"
+
+ :changelog-html-directory "doc/"
+ :changelog-html-filename "changelog.html"
+
+ :changelog-markdown-directory ""
+ :changelog-markdown-filename "changelog.md"
+
+ :changelog-entries-directory "resources/changelog_entries/"
+
+ :tidy-html? true}
+

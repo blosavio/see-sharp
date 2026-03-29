@@ -45,7 +45,7 @@
   [:p [:em "Observation: A straightforward, idiomatic implementation with "
        [:code "reduce"]
        ", "
-       [:code "conj"]
+       [:code "conj!"]
        ", and transients offers performance improvements across a wide range of
  conditions."]]
 
@@ -55,7 +55,7 @@
    [:a {:href "https://github.com/clojure/clojure/blob/clojure-1.12.4/src/clj/clojure/core.clj#L1555"}
     "implemented"]
    " with recursive loop pattern. Let's write "
-   [:a {:href "https://github.com/blosavio/see-sharp/blob/main/src/see-sharp/select_keys_variants.clj"}
+   [:a {:href "https://github.com/blosavio/see-sharp/blob/main/src/see_sharp/select_keys_variants.clj"}
     "six variants"]
    " that mix-and-match components and compare their performance."]
 
@@ -97,17 +97,31 @@
    [:a {:href ""} "Criterium"]
    " benchmarking facility to objectively measure the evaluation times of a
  range of conditions. We'll explore two regimes of hashmap sizes: zero to
- sixteen key/values pairs, and one to one-million key/value pairs. Further,
- we'll investigate the effects of the different flavors of key sequences."
+ sixteen key/values pairs stepping by ones, and one to one-million key/value
+ pairs stepping by decades. Further, we'll investigate the effects of the
+ different flavors of key sequences."
+   [:em " TODO: Remove repetitive examples."]
    [:ul
     [:li [:em "All keys"]
      " means that the hashmap contains a key/value pair for every element of the
- key sequence. "]
+ key sequence. Example:"
+     [:pre
+      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66} ;; hashmap"]
+      [:br]
+      [:code "[:a    :b    :c    :d    :e    :f]    ;; key sequence"]]]
     [:li [:em "Half keys"]
-     " means that only half are contained."]
+     " means that only half are contained. Example:"
+     [:pre
+      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}          ;; hashmap"]
+      [:br]
+      [:code "[:a          :c          :e          :g :h :i] ;; key sequence"]]]
     [:li [:em "No keys"]
      " means that the tested hashmap contains none of the elements
- corresponding to elements of the key sequence."]]]
+ corresponding to elements of the key sequence. Example:"
+     [:pre
+      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}                   ;; hashmap"]
+      [:br]
+      [:code "[                                    :g :h :i :j :k :l] ;; key sequence"]]]]]
 
   [:p "Overall, three variants demonstrated improved performance over
  Clojure's "
@@ -116,7 +130,14 @@
    [:em "fselect-keys-6"]
    ", displayed 5–20% improved performance over a wide range of hashmap sizes
  and fractions of key sequence matches. This implementation is straightforward
- and maintains idiomatic style."]]
+ and maintains idiomatic style. It is provided by "
+   [:code "see-sharp"]
+   "'s "
+   [:a {:href "https://blosavio.github.io/see-sharp/see-sharp.core.html"}
+    "core namespace"]
+   ", named "
+   [:code "fselect-keys"]
+   "."]]
 
  :comments
  {"Measure `select-keys` variants, contains all keys"
@@ -136,8 +157,9 @@
 
    [:p "The upper chart shows that variants 2 (orange diamonds), 4 (green
  squares), and 6 (gold circles) demonstrate 20-25% speedups across a wide range
- of hashmap sizes. The lower chars shows that most of the variants perform
- similarly, with 2, 4, and 6 again performing among the speediest."]]
+ of hashmap sizes. The lower chart shows that most of the variants perform
+ similarly, with 2, 4, and 6 again performing among the speediest by a small
+ margin."]]
 
   "Measure `select-keys` variants, contains half keys"
   [:div
@@ -151,12 +173,13 @@
 
    [:pre [:code "{:a 11 :c 33 :d 55}"]]
 
-   [:p "Variants 4 and 6 show 15-20% speedups for both large hashmaps (first
- chart below) and small hashmaps (second chart below)."]]
+   [:p "Variants 4 (green triangles) and 6 (gold circles) show 15-20% speedups
+ for both large hashmaps (first chart below) and small hashmaps (second chart
+ below)."]]
 
   "Measure `select-keys` variants, contains no keys"
   [:div
-   [:p "These final two chars show scenarios when none of elements of the key
+   [:p "These final two charts show scenarios when none of elements of the key
  sequence are keys of the hashmap. For example, none of these elements…"]
 
    [:pre [:code "[:a :b :c]"]]
