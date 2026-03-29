@@ -1,0 +1,58 @@
+{:overhead 7.352667590609779E-9,
+ :samples
+ (109635075 102708651 101037535 100811591 104877496 100885816),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.025831506833333334 (0.0253671715 0.026676571125000003)],
+ :final-gc-time 414148040,
+ :execution-count 4,
+ :variance
+ [7.559168763034441E-7 (5.772561192875E-8 1.4189506619983494E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888884,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5794425569,
+ :lower-q [0.02520289775 (0.02520289775 0.025221454)],
+ :warmup-executions 223,
+ :sample-count 6,
+ :upper-q [0.027192318 (0.025624940375000002 0.027408768750000003)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 12,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "3e6bdbf0-a9ed-4066-af8f-6cc329623662",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "fselect-keys-4",
+  :parallel? false},
+ :total-time 0.619956164,
+ :sample-variance [7.513313700790159E-7 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.352667590609779E-9},
+ :sample-mean
+ [0.025831506833333334 (0.02323112564383224 0.028431888022834428)],
+ :results :fastester/benchmark-fn-results-elided}

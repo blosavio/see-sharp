@@ -1,0 +1,58 @@
+{:overhead 1.0644783851750414E-8,
+ :samples
+ (903627100 973629446 1022547993 1013608016 938731037 1091057039),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.9896867450000001 (0.9465324808333334 1.0357412543333335)],
+ :final-gc-time 1200311814,
+ :execution-count 1,
+ :variance
+ [0.005369629864806093 (0.0019165474113443915 0.009428469921432474)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.153471422463669,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5841771464,
+ :lower-q [0.9036271 (0.9036271 0.91237739325)],
+ :warmup-executions 6,
+ :sample-count 6,
+ :upper-q [1.081375911125 (1.013608016 1.091057039)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 13,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "be6a5e7e-3396-4ded-8db6-122bd61c6924",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-1",
+  :parallel? false},
+ :total-time 5.943200631,
+ :sample-variance [0.004436861503840885 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 1.0644783851750414E-8},
+ :sample-mean
+ [0.9905334385000001 (0.7907041275004173 1.1903627494995828)],
+ :results :fastester/benchmark-fn-results-elided}

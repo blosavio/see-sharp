@@ -1,0 +1,58 @@
+{:overhead 7.352667590609779E-9,
+ :samples
+ (451972152 460962509 427427616 428105474 428693874 431406448),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.4379817025 (0.42875370300000004 0.4495908318333333)],
+ :final-gc-time 743247957,
+ :execution-count 1,
+ :variance
+ [2.2416698327179616E-4 (8.979108711917037E-5 3.133292908268102E-4)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888884,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5664146029,
+ :lower-q [0.427427616 (0.427427616 0.42810547400000004)],
+ :warmup-executions 13,
+ :sample-count 6,
+ :upper-q [0.457268001375 (0.43106737625 0.460962509)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 13,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "630e2c2c-f796-48f5-ae6a-3859c9e2d0e0",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-4",
+  :parallel? false},
+ :total-time 2.628568073,
+ :sample-variance [2.1243998478200193E-4 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.352667590609779E-9},
+ :sample-mean
+ [0.43809467883333336 (0.39436871557306863 0.48182064209359804)],
+ :results :fastester/benchmark-fn-results-elided}

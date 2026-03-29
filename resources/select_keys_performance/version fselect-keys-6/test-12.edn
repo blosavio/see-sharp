@@ -1,0 +1,59 @@
+{:overhead 7.464746924392719E-9,
+ :samples
+ (111107755 104245106 111413973 109663741 101693767 114647494),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean
+ [0.027138659250000002 (0.026175791958333333 0.02797710066666667)],
+ :final-gc-time 430035111,
+ :execution-count 4,
+ :variance
+ [1.803494601709068E-6 (7.25985909585475E-7 2.8009207267430187E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888887,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5777123923,
+ :lower-q [0.02542344175 (0.02542344175 0.02582824571875)],
+ :warmup-executions 199,
+ :sample-count 6,
+ :upper-q [0.028551256656250003 (0.027731813312500003 0.0286618735)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 12,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "76299a68-c144-4f46-a989-868b9a20bd17",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 0.652771836,
+ :sample-variance [1.4792912147447493E-6 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean
+ [0.027198826500000002 (0.023550043013315328 0.030847609986684673)],
+ :results :fastester/benchmark-fn-results-elided}

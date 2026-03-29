@@ -1,0 +1,60 @@
+{:overhead 7.464746924392719E-9,
+ :samples
+ (137892814 138121066 149720191 136562658 138888972 137450183),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean
+ [0.046590882444444454 (0.045804566277777785 0.048605258000000005)],
+ :final-gc-time 467488647,
+ :execution-count 3,
+ :variance
+ [2.705844690508199E-6 (3.724620265071172E-8 5.3600015598605005E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888884,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 1},
+ :warmup-time 5080424880,
+ :lower-q [0.045520886 (0.045520886 0.045816727666666675)],
+ :warmup-executions 96,
+ :sample-count 6,
+ :upper-q
+ [0.04942343345833334 (0.04603084483333334 0.049906730333333336)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :all-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains all keys",
+  :index 5,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "6ad95ae2-cebb-4581-9902-24a6a45034b8",
+  :name "select-all-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 0.838635884,
+ :sample-variance [2.7043082990317182E-6 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean
+ [0.046590882444444454 (0.041657448073614586 0.051524316815274314)],
+ :results :fastester/benchmark-fn-results-elided}

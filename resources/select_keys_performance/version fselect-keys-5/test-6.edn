@@ -1,0 +1,58 @@
+{:overhead 7.316652547604437E-9,
+ :samples
+ (1021141712 1074999152 1160406367 1071220816 1091312432 1058480012),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [1.079177466666667 (1.051540292 1.1164433141666668)],
+ :final-gc-time 1284412022,
+ :execution-count 1,
+ :variance
+ [0.0024673829916434745 (5.404432675600427E-4 0.004841529521000689)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888887,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 1, :high-severe 0},
+ :warmup-time 10693793424,
+ :lower-q [1.0211417120000001 (1.0211417120000001 1.0278738920000001)],
+ :warmup-executions 10,
+ :sample-count 6,
+ :upper-q [1.149730465125 (1.07452686 1.160406367)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :all-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains all keys",
+  :index 6,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "17fc92ee-9715-4b88-90b7-bde35ede3d44",
+  :name "select-all-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-5",
+  :parallel? false},
+ :total-time 6.477560491,
+ :sample-variance [0.002124330721353836 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.316652547604437E-9},
+ :sample-mean
+ [1.0795934151666668 (0.9413220280607854 1.2178648022725482)],
+ :results :fastester/benchmark-fn-results-elided}

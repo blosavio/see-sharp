@@ -1,0 +1,59 @@
+{:overhead 7.464746924392719E-9,
+ :samples (99046152 99138773 99004464 99219899 98768480 100718550),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [1.3240082155555557E-4 (1.3195820866666668E-4 1.33538848E-4)],
+ :final-gc-time 385621006,
+ :execution-count 750,
+ :variance
+ [8.815080507157297E-13
+  (1.5728082944533332E-14 1.8120271377946706E-12)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888878,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 1},
+ :warmup-time 5390573623,
+ :lower-q
+ [1.3169130666666667E-4 (1.3169130666666667E-4 1.32005952E-4)],
+ :warmup-executions 40678,
+ :sample-count 6,
+ :upper-q [1.3402810383333333E-4 (1.3216959383333332E-4 1.342914E-4)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in small-maps [n :map]) (get-in small-maps [n :none-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains no keys",
+  :index 51,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "01bdadb8-304f-44de-bd74-e6c55d2852be",
+  :name "select-none-keys-small",
+  :testing-thoroughness :quick,
+  :arg 13,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 0.595896318,
+ :sample-variance [8.808682916181389E-13 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean
+ [1.32421404E-4 (1.2960576648345722E-4 1.352370415165428E-4)],
+ :results :fastester/benchmark-fn-results-elided}

@@ -1,0 +1,58 @@
+{:overhead 7.352667590609779E-9,
+ :samples
+ (791784872 754683817 998074602 884218551 931161570 854490185),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.8690689328333334 (0.801006976 0.9440156853333335)],
+ :final-gc-time 1310401742,
+ :execution-count 1,
+ :variance
+ [0.008861156066705215 (0.003129692662225323 0.015797086459444328)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.30867042260236643,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5512201736,
+ :lower-q [0.7546838170000001 (0.7546838170000001 0.791784872)],
+ :warmup-executions 7,
+ :sample-count 6,
+ :upper-q [0.9838425956250001 (0.8805025052500001 0.9980746020000001)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :all-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains all keys",
+  :index 6,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "11150452-f777-4132-a4d9-bc9fbbc30e80",
+  :name "select-all-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-4",
+  :parallel? false},
+ :total-time 5.214413597,
+ :sample-variance [0.007999357973905986 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.352667590609779E-9},
+ :sample-mean
+ [0.8690689328333334 (0.6007515428543126 1.1373863228123542)],
+ :results :fastester/benchmark-fn-results-elided}

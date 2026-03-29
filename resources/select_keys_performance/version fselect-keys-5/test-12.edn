@@ -1,0 +1,61 @@
+{:overhead 7.316652547604437E-9,
+ :samples
+ (115524906 115078204 108659644 108394748 119962960 110743445),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean
+ [0.03767678338888889 (0.036672902166666674 0.03882704100000001)],
+ :final-gc-time 426648457,
+ :execution-count 3,
+ :variance
+ [2.6126581030627115E-6 (1.0132401631627555E-6 4.393986558632829E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888876,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5102370359,
+ :lower-q
+ [0.03613158266666667 (0.03613158266666667 0.03622944504166667)],
+ :warmup-executions 136,
+ :sample-count 6,
+ :upper-q
+ [0.03978412183333334 (0.03822224941666667 0.03998765333333334)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 12,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "704b6f62-57cd-4c67-a08d-ae3ae341e5be",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "fselect-keys-5",
+  :parallel? false},
+ :total-time 0.678363907,
+ :sample-variance [2.317642209115753E-6 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.316652547604437E-9},
+ :sample-mean
+ [0.03768688372222223 (0.03311974239727489 0.042254025047169574)],
+ :results :fastester/benchmark-fn-results-elided}

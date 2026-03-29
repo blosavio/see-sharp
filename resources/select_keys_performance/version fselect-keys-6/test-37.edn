@@ -1,0 +1,58 @@
+{:overhead 7.464746924392719E-9,
+ :samples
+ (202225189 190970853 186538048 182384216 184670550 188379113),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.1892644675 (0.185506777 0.19668489233333336)],
+ :final-gc-time 388393454,
+ :execution-count 1,
+ :variance
+ [5.1456579748151426E-5 (6.068654053874391E-6 1.0449176921168225E-4)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888878,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 1, :high-severe 0},
+ :warmup-time 5811915678,
+ :lower-q
+ [0.18238421600000002 (0.18238421600000002 0.18467055000000002)],
+ :warmup-executions 31,
+ :sample-count 6,
+ :upper-q [0.20049442950000002 (0.188148979875 0.202225189)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :none-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains no keys",
+  :index 37,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "0b44548f-42dc-4b52-9d63-c8c992b87b77",
+  :name "select-none-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 1.135167969,
+ :sample-variance [4.9504394118013065E-5 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean [0.1891946615 (0.16808685377247612 0.2103024692275239)],
+ :results :fastester/benchmark-fn-results-elided}

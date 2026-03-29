@@ -1,0 +1,58 @@
+{:overhead 7.082480266837683E-9,
+ :samples
+ (571589649 570715402 574892897 595149460 653726959 618944008),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.5975030625000001 (0.5764716590000001 0.6282973825)],
+ :final-gc-time 654840116,
+ :execution-count 1,
+ :variance
+ [0.0012200276473257356 (3.5984182801935616E-4 0.0020528884423709273)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.1454988106089191,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 8101177437,
+ :lower-q [0.570715402 (0.570715402 0.5715896490000001)],
+ :warmup-executions 14,
+ :sample-count 6,
+ :upper-q [0.646404771625 (0.592617389625 0.653726959)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 13,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "aa3c29be-b026-4ecf-aa67-69d2cddf3264",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-3",
+  :parallel? false},
+ :total-time 3.585018375,
+ :sample-variance [0.0011053366929054643 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.082480266837683E-9},
+ :sample-mean
+ [0.5975030625000001 (0.4977632498064263 0.6972428751935738)],
+ :results :fastester/benchmark-fn-results-elided}

@@ -1,0 +1,62 @@
+{:overhead 7.464746924392719E-9,
+ :samples
+ (101522353 100707202 100996919 100561054 100632018 102200072),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean
+ [1.3181149869621905E-4 (1.3128231833985226E-4 1.324803139939157E-4)],
+ :final-gc-time 393511014,
+ :execution-count 767,
+ :variance
+ [7.654189583054704E-13
+  (1.9628160199154076E-13 1.3318132100200148E-12)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888862,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 5019356995,
+ :lower-q
+ [1.3110958800521512E-4 (1.3110958800521512E-4 1.3120210951760106E-4)],
+ :warmup-executions 38095,
+ :sample-count 6,
+ :upper-q
+ [1.3305042747718384E-4 (1.316306445567145E-4 1.3324650847457628E-4)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :none-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains no keys",
+  :index 32,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "b798283b-50eb-4ff5-8c05-8104574193eb",
+  :name "select-none-keys-large",
+  :testing-thoroughness :quick,
+  :arg 10,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 0.606619618,
+ :sample-variance [7.013091259830877E-13 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean
+ [1.3181651847023036E-4 (1.2930419242971575E-4 1.3432884451074496E-4)],
+ :results :fastester/benchmark-fn-results-elided}

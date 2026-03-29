@@ -1,0 +1,59 @@
+{:overhead 7.464746924392719E-9,
+ :samples
+ (444986620 446073630 442942797 460633792 446681844 487351164),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.45477830783333334 (0.44581266233333333 0.47583751133333335)],
+ :final-gc-time 771983018,
+ :execution-count 1,
+ :variance
+ [3.004807447462094E-4 (3.775841600115E-5 5.654575675850462E-4)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888876,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 1, :high-severe 0},
+ :warmup-time 8052107657,
+ :lower-q
+ [0.44294279700000005 (0.44294279700000005 0.44341017787500003)],
+ :warmup-executions 17,
+ :sample-count 6,
+ :upper-q [0.48226749900000004 (0.44668184400000005 0.487351164)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :half-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains half keys",
+  :index 13,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "7b3c9f3f-e49a-4cea-85d9-ceaedac5d05a",
+  :name "select-half-keys-large",
+  :testing-thoroughness :quick,
+  :arg 1000000,
+  :version "fselect-keys-6",
+  :parallel? false},
+ :total-time 2.728669847,
+ :sample-variance [2.945116527556872E-4 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.464746924392719E-9},
+ :sample-mean
+ [0.45477830783333334 (0.40329428240018383 0.5062623332664828)],
+ :results :fastester/benchmark-fn-results-elided}

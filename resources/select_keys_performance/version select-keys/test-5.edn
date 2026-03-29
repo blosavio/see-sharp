@@ -1,0 +1,58 @@
+{:overhead 7.079026989220395E-9,
+ :samples
+ (121944628 121537479 121254944 129005748 121372432 121240681),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean [0.06136299266666667 (0.06069235916666667 0.06273759400000001)],
+ :final-gc-time 440487924,
+ :execution-count 2,
+ :variance
+ [2.3851408191137398E-6 (5.374770878774925E-9 4.460666018386263E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.1388888888888888,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 1},
+ :warmup-time 7466211495,
+ :lower-q [0.0606203405 (0.0606203405 0.060628574937500006)],
+ :warmup-executions 121,
+ :sample-count 6,
+ :upper-q [0.06403610718750001 (0.060758424062500004 0.064502874)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :all-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains all keys",
+  :index 5,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "529d4572-84ce-46a5-af76-b1eb29c9ebd5",
+  :name "select-all-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "select-keys",
+  :parallel? false},
+ :total-time 0.736355912,
+ :sample-variance [2.383034196477967E-6 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.079026989220395E-9},
+ :sample-mean
+ [0.06136299266666667 (0.056731868853994234 0.0659941164793391)],
+ :results :fastester/benchmark-fn-results-elided}

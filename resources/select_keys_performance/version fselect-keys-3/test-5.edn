@@ -1,0 +1,59 @@
+{:overhead 7.082480266837683E-9,
+ :samples
+ (119317076 124375473 119077023 128179071 120506062 118771538),
+ :runtime-details
+ {:spec-vendor "Oracle Corporation",
+  :spec-name "Java Virtual Machine Specification",
+  :clojure-version-string "1.12.4",
+  :java-version "11.0.30",
+  :vm-name "OpenJDK 64-Bit Server VM",
+  :vm-vendor "Ubuntu",
+  :clojure-version
+  {:major 1, :minor 12, :incremental 4, :qualifier nil},
+  :spec-version "11",
+  :sun-arch-data-model "64"},
+ :mean
+ [0.060897648416666665 (0.059725770500000004 0.06271161850000001)],
+ :final-gc-time 441577848,
+ :execution-count 2,
+ :variance
+ [3.970782264506168E-6 (1.0786369068817416E-6 6.497821153582469E-6)],
+ :os-details
+ {:arch "amd64",
+  :available-processors 3,
+  :name "Linux",
+  :version "5.15.0-173-generic"},
+ :tail-quantile 0.025,
+ :outlier-variance 0.13888888888888862,
+ :outliers {:low-severe 0, :low-mild 0, :high-mild 0, :high-severe 0},
+ :warmup-time 6799119151,
+ :lower-q [0.059385769000000005 (0.059385769000000005 0.0595385115)],
+ :warmup-executions 113,
+ :sample-count 6,
+ :upper-q [0.06360997243750001 (0.060178719375 0.0640895355)],
+ :fastester/metadata
+ {:fexpr
+  "(fn [n] ((select-keys-tactic) (get-in large-maps [n :map]) (get-in large-maps [n :all-keys])))",
+  :date {:year 2026, :month "March", :day 16},
+  :group "Measure `select-keys` variants, contains all keys",
+  :index 5,
+  :ns "see-sharp.performance.select-keys",
+  :UUIDv4 #uuid "72e05fe0-26c5-43a8-9fb3-7a87fc03ec33",
+  :name "select-all-keys-large",
+  :testing-thoroughness :quick,
+  :arg 100000,
+  :version "fselect-keys-3",
+  :parallel? false},
+ :total-time 0.730226243,
+ :sample-variance [3.5848057389927394E-6 (0.0 0.0)],
+ :options
+ {:max-gc-attempts 100,
+  :samples 6,
+  :target-execution-time 100000000,
+  :warmup-jit-period 5000000000,
+  :tail-quantile 0.025,
+  :bootstrap-size 500,
+  :overhead 7.082480266837683E-9},
+ :sample-mean
+ [0.06085218691666667 (0.055172111947889 0.06653226188544434)],
+ :results :fastester/benchmark-fn-results-elided}

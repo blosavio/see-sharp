@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Attempt to minimize benchmark variance by explicitly setting CPU affinity.
+
+set -eu
+
+#taskset --cpu-list 1-3 lein with-profiles default,benchmark run -m fastester.core :benchmarks ./resources/merge_options.edn
+
+#taskset --cpu-list 1-3 lein with-profiles default,benchmark run -m fastester.core :benchmarks ./resources/select_keys_options.edn
+
+#taskset --cpu-list 1-3 lein with-profiles default,benchmark run -m fastester.core :benchmarks ./resources/situational_options.edn
+
+#taskset --cpu-list 1-3 lein with-profiles default,benchmark run -m fastester.core :benchmarks ./resources/set_ops_options.edn
+
+#taskset --cpu-list 1-3 lein with-profiles default,benchmark run -m fastester.core :benchmarks ./resources/experimental_options.edn
+
+exit 0
+
