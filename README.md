@@ -42,7 +42,8 @@
       </h3>
       <p>
         Feel free to directly copy-paste the <a href=
-        "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L5-L23">code</a> (license terms apply).
+        "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L5-L23">code</a> (<a href=
+        "https://github.com/blosavio/see-sharp/blob/main/LICENSE">license</a> terms apply).
       </p>
     </section>
     <section id="usage">
@@ -79,6 +80,9 @@
       <p>
         It probably only makes sense to use this variant if we&apos;re in some unusually performance-sensitive context where 5–20% is a significant. Otherwise,
         stick with Clojure&apos;s version.
+      </p>
+      <p>
+        Also: It&apos;s easy to have an idea; proving that the idea is good takes time and effort. And ultimately, the idea may be merely okay.
       </p>
     </section>
     <section id="alternatives">
@@ -124,7 +128,7 @@
     <p></p>
     <p id="page-footer">
       Copyright © 2024–2026 Brad Losavio.<br>
-      Compiled by <a href="https://github.com/blosavio/readmoi">ReadMoi</a> on 2026 March 29.<span id="uuid"><br>
+      Compiled by <a href="https://github.com/blosavio/readmoi">ReadMoi</a> on 2026 March 30.<span id="uuid"><br>
       e8a546fe-1f02-4eea-97a1-e87219c93c0a</span>
     </p>
   </body>

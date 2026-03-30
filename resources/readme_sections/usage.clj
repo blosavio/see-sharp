@@ -50,5 +50,8 @@
 
  [:p "It probably only makes sense to use this variant if we're in some
  unusually performance-sensitive context where 5–20% is a significant.
- Otherwise, stick with Clojure's version."]]
+ Otherwise, stick with Clojure's version."]
+
+ [:p "Also: It's easy to have an idea; proving that the idea is good takes
+ time and effort. And ultimately, the idea may be merely okay."]]
 

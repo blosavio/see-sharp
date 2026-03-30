@@ -94,34 +94,21 @@
     [:td "transients"]]]
 
   [:p "We'll use the "
-   [:a {:href ""} "Criterium"]
-   " benchmarking facility to objectively measure the evaluation times of a
- range of conditions. We'll explore two regimes of hashmap sizes: zero to
- sixteen key/values pairs stepping by ones, and one to one-million key/value
- pairs stepping by decades. Further, we'll investigate the effects of the
- different flavors of key sequences."
-   [:em " TODO: Remove repetitive examples."]
-   [:ul
-    [:li [:em "All keys"]
-     " means that the hashmap contains a key/value pair for every element of the
- key sequence. Example:"
-     [:pre
-      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66} ;; hashmap"]
-      [:br]
-      [:code "[:a    :b    :c    :d    :e    :f]    ;; key sequence"]]]
-    [:li [:em "Half keys"]
-     " means that only half are contained. Example:"
-     [:pre
-      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}          ;; hashmap"]
-      [:br]
-      [:code "[:a          :c          :e          :g :h :i] ;; key sequence"]]]
-    [:li [:em "No keys"]
-     " means that the tested hashmap contains none of the elements
- corresponding to elements of the key sequence. Example:"
-     [:pre
-      [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}                   ;; hashmap"]
-      [:br]
-      [:code "[                                    :g :h :i :j :k :l] ;; key sequence"]]]]]
+   [:a {:href "https://github.com/hugoduncan/criterium/"}
+    "Criterium"]
+   " benchmarking facility to "
+   [:a {:href "https://github.com/blosavio/see-sharp/blob/main/test/see_sharp/performance/select_keys.clj"}
+    "objectively measure"]
+   " the evaluation times of a range of conditions. We'll explore two regimes of
+ hashmap sizes: zero to sixteen key/values pairs stepping by ones, and one to
+ one-million key/value pairs stepping by decades. Further, we'll investigate the
+ effects of the different flavors of key sequences (labeled "
+   [:em "all keys"]
+   ", "
+   [:em "half keys"]
+   ", and "
+   [:em "no keys"]
+   ", explained later)."]
 
   [:p "Overall, three variants demonstrated improved performance over
  Clojure's "
@@ -143,13 +130,24 @@
  {"Measure `select-keys` variants, contains all keys"
   [:div
    [:p "Let's consider selecting keys from hashmaps where the elements of the
- key sequence are all present in the hashmap. For example, the elements of this
- key sequence"]
-   [:pre [:code "[:a :b :c :d :e :f]"]]
-   [:p " is fully contained in this hashmap."]
+ key sequence are all present in the hashmap. For example, this hashmap…"]
    [:pre [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}"]]
+   [:p "…fully contains the elements of this key sequence."]
+   [:pre [:code "[:a :b :c :d :e :f]"]]
+   [:p "If we stack them, we can see the matches."]
+   [:pre
+    [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66} ;; hashmap"]
+    [:br]
+    [:code "[:a    :b    :c    :d    :e    :f]    ;; key sequence"]]
+   [:p "The hashmap contains every keyword contained in the key sequence, "
+    [:code ":a"]
+    " through "
+    [:code ":f"]
+    ". The output hashmap would be identical to the input hashmap. Though we are
+ using keywords as keys for this illustration, during benchmarking, the keys are
+ integers."]
    [:p "We'll test hashmaps in two size regimes. The first regime is 'large':
- hashmaps containing one, ten, one-hundred, ..., up to one-million key-value
+ hashmaps containing one, ten, one-hundred, …up to one-million key-value
  pairs. The second regime is 'small': hashmaps containing one to sixteen
  key/value pairs. We will compare the Clojure's "
     [:code "select-keys"]
@@ -164,14 +162,28 @@
   "Measure `select-keys` variants, contains half keys"
   [:div
    [:p "The next two charts involve scenarios where the hashmap contains half of
- the elements of the key sequence. For example, only half of this key
- sequence…"]
+ the elements of the key sequence. For example, the following hashmap contains
+ only half the keys of the key sequence."]
 
-   [:pre [:code "[:a :b :c :d :e :f]"]]
+   [:pre
+    [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}          ;; hashmap"]
+    [:br]
+    [:code "[:a          :c          :e          :g :h :i] ;; key sequence"]]
 
-   "…is contained in this hashmap."
-
-   [:pre [:code "{:a 11 :c 33 :d 55}"]]
+   [:p "The hashmap contains keywords "
+    [:code ":a"]
+    ", "
+    [:code ":c"]
+    ", and "
+    [:code ":e"]
+    ", but not "
+    [:code ":b"]
+    ", "
+    [:code ":d"]
+    ", nor "
+    [:code ":f"]
+    ". Furthermore, the key sequence contains three keywords that are not in the
+ hashmap. The output hashmap would be half the size of the input hashmap."]
 
    [:p "Variants 4 (green triangles) and 6 (gold circles) show 15-20% speedups
  for both large hashmaps (first chart below) and small hashmaps (second chart
@@ -180,13 +192,26 @@
   "Measure `select-keys` variants, contains no keys"
   [:div
    [:p "These final two charts show scenarios when none of elements of the key
- sequence are keys of the hashmap. For example, none of these elements…"]
+ sequence are keys of the hashmap. For example, the following hashmap and key
+ sequence contain zero keys in common."]
 
-   [:pre [:code "[:a :b :c]"]]
+   [:pre
+    [:code "{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}                   ;; hashmap"]
+    [:br]
+    [:code "[                                    :g :h :i :j :k :l] ;; key sequence"]]
 
-   [:p "…are contained in this hashmap."]
-
-   [:pre [:code "{:d 44 :e 55 :f 66}"]]
+   [:p "The hashmap contains keys "
+    [:code ":a"]
+    " through "
+    [:code ":f"]
+    ", while the key sequence contains keys "
+    [:code ":g"]
+    " through "
+    [:code ":l"]
+    ". In this case, though the "
+    [:code "select-keys"]
+    " variants must handle all the elements of the key sequence, the output
+ hashmap would be empty."]
 
    [:p "Variant 6 (gold circles) shows about a 5% speedup over Clojure's
  built-in "    [:code "select-keys"]

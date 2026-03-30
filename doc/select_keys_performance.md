@@ -103,25 +103,12 @@
         </tr>
       </table>
       <p>
-        We&apos;ll use the <a href="">Criterium</a> benchmarking facility to objectively measure the evaluation times of a range of conditions. We&apos;ll
-        explore two regimes of hashmap sizes: zero to sixteen key/values pairs stepping by ones, and one to one-million key/value pairs stepping by decades.
-        Further, we&apos;ll investigate the effects of the different flavors of key sequences. <em>TODO: Remove repetitive examples.</em>
+        We&apos;ll use the <a href="https://github.com/hugoduncan/criterium/">Criterium</a> benchmarking facility to <a href=
+        "https://github.com/blosavio/see-sharp/blob/main/test/see_sharp/performance/select_keys.clj">objectively measure</a> the evaluation times of a range of
+        conditions. We&apos;ll explore two regimes of hashmap sizes: zero to sixteen key/values pairs stepping by ones, and one to one-million key/value pairs
+        stepping by decades. Further, we&apos;ll investigate the effects of the different flavors of key sequences (labeled <em>all keys</em>, <em>half
+        keys</em>, and <em>no keys</em>, explained later).
       </p>
-      <ul>
-        <li>
-          <em>All keys</em> means that the hashmap contains a key/value pair for every element of the key sequence. Example:
-          <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66} ;; hashmap</code><br><code>[:a    :b    :c    :d    :e    :f]    ;; key sequence</code></pre>
-        </li>
-        <li>
-          <em>Half keys</em> means that only half are contained. Example:
-          <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}          ;; hashmap</code><br><code>[:a          :c          :e          :g :h :i] ;; key sequence</code></pre>
-        </li>
-        <li>
-          <em>No keys</em> means that the tested hashmap contains none of the elements corresponding to elements of the key sequence. Example:
-          <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}                   ;; hashmap</code><br><code>[                                    :g :h :i :j :k :l] ;; key sequence</code></pre>
-        </li>
-      </ul>
-      <p></p>
       <p>
         Overall, three variants demonstrated improved performance over Clojure&apos;s <code>select-keys</code>. Variant six, labeled as
         <em>fselect-keys-6</em>, displayed 5–20% improved performance over a wide range of hashmap sizes and fractions of key sequence matches. This
@@ -135,18 +122,25 @@
       </h3>
       <div>
         <p>
-          Let&apos;s consider selecting keys from hashmaps where the elements of the key sequence are all present in the hashmap. For example, the elements of
-          this key sequence
-        </p>
-        <pre><code>[:a :b :c :d :e :f]</code></pre>
-        <p>
-          is fully contained in this hashmap.
+          Let&apos;s consider selecting keys from hashmaps where the elements of the key sequence are all present in the hashmap. For example, this hashmap…
         </p>
         <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}</code></pre>
         <p>
-          We&apos;ll test hashmaps in two size regimes. The first regime is &apos;large&apos;: hashmaps containing one, ten, one-hundred, ..., up to
-          one-million key-value pairs. The second regime is &apos;small&apos;: hashmaps containing one to sixteen key/value pairs. We will compare the
-          Clojure&apos;s <code>select-keys</code> (magenta diamonds) to six alternative implementations.
+          …fully contains the elements of this key sequence.
+        </p>
+        <pre><code>[:a :b :c :d :e :f]</code></pre>
+        <p>
+          If we stack them, we can see the matches.
+        </p>
+        <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66} ;; hashmap</code><br><code>[:a    :b    :c    :d    :e    :f]    ;; key sequence</code></pre>
+        <p>
+          The hashmap contains every keyword contained in the key sequence, <code>:a</code> through <code>:f</code>. The output hashmap would be identical to
+          the input hashmap. Though we are using keywords as keys for this illustration, during benchmarking, the keys are integers.
+        </p>
+        <p>
+          We&apos;ll test hashmaps in two size regimes. The first regime is &apos;large&apos;: hashmaps containing one, ten, one-hundred, …up to one-million
+          key-value pairs. The second regime is &apos;small&apos;: hashmaps containing one to sixteen key/value pairs. We will compare the Clojure&apos;s
+          <code>select-keys</code> (magenta diamonds) to six alternative implementations.
         </p>
         <p>
           The upper chart shows that variants 2 (orange diamonds), 4 (green squares), and 6 (gold circles) demonstrate 20-25% speedups across a wide range of
@@ -1002,11 +996,14 @@
       </h3>
       <div>
         <p>
-          The next two charts involve scenarios where the hashmap contains half of the elements of the key sequence. For example, only half of this key
-          sequence…
+          The next two charts involve scenarios where the hashmap contains half of the elements of the key sequence. For example, the following hashmap
+          contains only half the keys of the key sequence.
         </p>
-        <pre><code>[:a :b :c :d :e :f]</code></pre>…is contained in this hashmap.
-        <pre><code>{:a 11 :c 33 :d 55}</code></pre>
+        <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}          ;; hashmap</code><br><code>[:a          :c          :e          :g :h :i] ;; key sequence</code></pre>
+        <p>
+          The hashmap contains keywords <code>:a</code>, <code>:c</code>, and <code>:e</code>, but not <code>:b</code>, <code>:d</code>, nor <code>:f</code>.
+          Furthermore, the key sequence contains three keywords that are not in the hashmap. The output hashmap would be half the size of the input hashmap.
+        </p>
         <p>
           Variants 4 (green triangles) and 6 (gold circles) show 15-20% speedups for both large hashmaps (first chart below) and small hashmaps (second chart
           below).
@@ -1860,13 +1857,14 @@
       </h3>
       <div>
         <p>
-          These final two charts show scenarios when none of elements of the key sequence are keys of the hashmap. For example, none of these elements…
+          These final two charts show scenarios when none of elements of the key sequence are keys of the hashmap. For example, the following hashmap and key
+          sequence contain zero keys in common.
         </p>
-        <pre><code>[:a :b :c]</code></pre>
+        <pre><code>{:a 11 :b 22 :c 33 :d 44 :e 55 :f 66}                   ;; hashmap</code><br><code>[                                    :g :h :i :j :k :l] ;; key sequence</code></pre>
         <p>
-          …are contained in this hashmap.
+          The hashmap contains keys <code>:a</code> through <code>:f</code>, while the key sequence contains keys <code>:g</code> through <code>:l</code>. In
+          this case, though the <code>select-keys</code> variants must handle all the elements of the key sequence, the output hashmap would be empty.
         </p>
-        <pre><code>{:d 44 :e 55 :f 66}</code></pre>
         <p>
           Variant 6 (gold circles) shows about a 5% speedup over Clojure&apos;s built-in <code>select-keys</code> (magenta diamonds) for large hashmaps (first
           chart) and pretty much matches it performance for small hashmaps (second chart).
@@ -2718,7 +2716,7 @@
     </section>
     <p id="page-footer">
       Copyright © 2024–2026 Brad Losavio.<br>
-      Compiled by <a href="https://github.com/blosavio/Fastester">Fastester</a> on 2026 March 29.<span id="uuid"><br>
+      Compiled by <a href="https://github.com/blosavio/Fastester">Fastester</a> on 2026 March 30.<span id="uuid"><br>
       d9a58c57-e8c3-4413-aab3-8ef9e05f948e</span>
     </p>
   </body>

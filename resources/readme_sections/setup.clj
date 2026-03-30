@@ -30,5 +30,8 @@
  [:p "Feel free to directly copy-paste the "
   [:a {:href "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L5-L23"}
    "code"]
-  " (license terms apply)."]]
+  " ("
+  [:a {:href "https://github.com/blosavio/see-sharp/blob/main/LICENSE"}
+   "license"]
+  " terms apply)."]]
 
