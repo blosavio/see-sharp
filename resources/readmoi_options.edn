@@ -2,13 +2,9 @@
             {:section-name "Setup"}
             {:section-name "API" :section-href "https://blosavio.github.io/see-sharp/index.html" :skip-section-load? true}
             {:section-name "Changelog" :section-href "https://github.com/blosavio/chlog/blob/main/changelog.md" :skip-section-load? true}
-            ;;{:section-name "Introduction" :section-href "intro"}
-            ;;{:section-name "Ideas" :section-href "ideas"}
             {:section-name "Usage" :section-href "usage"}
-            ;;{:section-name "Possibilities" :section-href "possibilities"}
-            ;;{:section-name "Critique" :section-href "critique"}
+            {:section-name "Performance" :section-href "https://blosavio.github.io/see-sharp/select_keys_performance.html" :skip-section-load? true}
             {:section-name "Alternatives" :section-href "alternatives"}
-            ;;{:section-name "Examples" :section-href "examples"}
             {:section-name "Glossary" :section-href "glossary"}
             {:section-name "Contact" :section-href "https://github.com/blosavio" :skip-section-load? true}]
 

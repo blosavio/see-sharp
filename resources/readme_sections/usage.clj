@@ -9,26 +9,28 @@
    "implemented"]
   " with a recursive "
   [:code "first/next"]
-  " idiom. I wondered if an alternative implementation using some other "
+  " idiom. Could an alternative implementation using some other "
   [:a {:href "https://ask.clojure.org/index.php/1913/use-transients-with-select-keys-if-possible"}
    "standard"]
-  " Clojure idiom could perform measurably better across a wide range of inputs."]
+  " Clojure idiom perform measurably better across a wide range of inputs?"]
 
- [:p "Overall, I "
-  [:a {:href "https://blosavio.github.io/see-charp/select_keys_performance.html"}
-   "observed"]
-  " that an idiomatic "
+ [:p "Yes, an idiomatic "
   [:a {:href "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L17-L22"}
    "variant"]
   " composed of "
   [:code "reduce"]
   ", "
   [:code "conj!"]
-  ", and transients performs 5–20% faster than Clojure's "
+  ", and transients performs "
+  [:a {:href "https://blosavio.github.io/see-charp/select_keys_performance.html"}
+   "5–20% faster"]
+  " than Clojure's "
   [:code "select-keys"]
   " on hashmaps containing up to one-million entries."]
 
- [:p "Here's how we use it. We supply a hashmap and a "
+ [:p "Here's how we use "
+  [:code "fselect-keys"]
+  ". We supply a hashmap and a "
   [:a {:href "#key-sequence"}
    [:em "key sequence"]]
   "."]
@@ -38,8 +40,8 @@
  [:p "Exactly like "
   [:code "select-keys"]
   ", "
-  [:code "fselect-keys"]
-  " returns a hashmap with only those entries, but a smidge faster."]
+  [:code [:strong "f"] "select-keys"]
+  " yields a hashmap with only those entries, but returns a smidge faster."]
 
  [:p "More "
   [:a {:href "https://clojuredocs.org/clojure.core/select-keys"}
@@ -52,6 +54,19 @@
  unusually performance-sensitive context where 5–20% is a significant.
  Otherwise, stick with Clojure's version."]
 
- [:p "Also: It's easy to have an idea; proving that the idea is good takes
- time and effort. And ultimately, the idea may be merely okay."]]
+ [:h4 "Meta-commentary"]
+
+ [:p "If you ever think to yourself "]
+
+ [:p
+  [:em "I've got this totally awesome idea on how to rewrite "
+   [:code "some-function"]
+   ","]]
+
+ [:p "Beware that much later you'll likely realize "]
+
+ [:em "Good grief! Proving that "
+  [:code "some-function"]
+  " is faster takes a ton of time and grinding effort. And ultimately, it's
+ merely 5% faster. And only on synthetic benchmarks."]]
 

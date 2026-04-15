@@ -6,6 +6,7 @@
     <a href="https://blosavio.github.io/see-sharp/index.html">API</a><br>
     <a href="https://github.com/blosavio/chlog/blob/main/changelog.md">Changelog</a><br>
     <a href="#usage">Usage</a><br>
+    <a href="https://blosavio.github.io/see-sharp/select_keys_performance.html">Performance</a><br>
     <a href="#alternatives">Alternatives</a><br>
     <a href="#glossary">Glossary</a><br>
     <a href="https://github.com/blosavio">Contact</a><br>
@@ -17,8 +18,8 @@
         Quick summary
       </h2>
       <p>
-        This library supplies a single function, <code>fselect-keys</code>, an alternative variant of Clojure&apos;s core <code>select-keys</code> that
-        performs 5–20% faster on hashmaps up to one-million entries.
+        This library supplies a single function, <code>fselect-keys</code>, an alternative to Clojure&apos;s core <code>select-keys</code> that performs 5–20%
+        faster on hashmaps containing millions of entries.
       </p>
     </section>
     <section id="setup">
@@ -53,23 +54,24 @@
       <p>
         Clojure&apos;s <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/select-keys"><code>select-keys</code></a> is <a href=
         "https://github.com/clojure/clojure/blob/8ae9e4f95e2fbbd4ee4ee3c627088c45ab44fa68/src/clj/clojure/core.clj#L1555-L1568">implemented</a> with a
-        recursive <code>first/next</code> idiom. I wondered if an alternative implementation using some other <a href=
-        "https://ask.clojure.org/index.php/1913/use-transients-with-select-keys-if-possible">standard</a> Clojure idiom could perform measurably better across
-        a wide range of inputs.
+        recursive <code>first/next</code> idiom. Could an alternative implementation using some other <a href=
+        "https://ask.clojure.org/index.php/1913/use-transients-with-select-keys-if-possible">standard</a> Clojure idiom perform measurably better across a wide
+        range of inputs?
       </p>
       <p>
-        Overall, I <a href="https://blosavio.github.io/see-charp/select_keys_performance.html">observed</a> that an idiomatic <a href=
+        Yes, an idiomatic <a href=
         "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L17-L22">variant</a> composed of
-        <code>reduce</code>, <code>conj!</code>, and transients performs 5–20% faster than Clojure&apos;s <code>select-keys</code> on hashmaps containing up to
-        one-million entries.
+        <code>reduce</code>, <code>conj!</code>, and transients performs <a href="https://blosavio.github.io/see-charp/select_keys_performance.html">5–20%
+        faster</a> than Clojure&apos;s <code>select-keys</code> on hashmaps containing up to one-million entries.
       </p>
       <p>
-        Here&apos;s how we use it. We supply a hashmap and a <a href="#key-sequence"><em>key sequence</em></a>.
+        Here&apos;s how we use <code>fselect-keys</code>. We supply a hashmap and a <a href="#key-sequence"><em>key sequence</em></a>.
       </p>
       <pre><code>(fselect-keys {:a 11, :b 22, :c 33, :d 44, :e 55} [:a :c :e])
 ;; =&gt; {:a 11, :c 33, :e 55}</code></pre>
       <p>
-        Exactly like <code>select-keys</code>, <code>fselect-keys</code> returns a hashmap with only those entries, but a smidge faster.
+        Exactly like <code>select-keys</code>, <code><strong>f</strong>select-keys</code> yields a hashmap with only those entries, but returns a smidge
+        faster.
       </p>
       <p>
         More <a href="https://clojuredocs.org/clojure.core/select-keys">examples</a>.
@@ -81,9 +83,19 @@
         It probably only makes sense to use this variant if we&apos;re in some unusually performance-sensitive context where 5–20% is a significant. Otherwise,
         stick with Clojure&apos;s version.
       </p>
+      <h4>
+        Meta-commentary
+      </h4>
       <p>
-        Also: It&apos;s easy to have an idea; proving that the idea is good takes time and effort. And ultimately, the idea may be merely okay.
+        If you ever think to yourself
       </p>
+      <p>
+        <em>I&apos;ve got this totally awesome idea on how to rewrite <code>some-function</code>,</em>
+      </p>
+      <p>
+        Beware that much later you&apos;ll likely realize
+      </p><em>Good grief! Proving that <code>some-function</code> is faster takes a ton of time and grinding effort. And ultimately, it&apos;s merely 5%
+      faster. And only on synthetic benchmarks.</em>
     </section>
     <section id="alternatives">
       <h2>
@@ -128,7 +140,7 @@
     <p></p>
     <p id="page-footer">
       Copyright © 2024–2026 Brad Losavio.<br>
-      Compiled by <a href="https://github.com/blosavio/readmoi">ReadMoi</a> on 2026 March 30.<span id="uuid"><br>
+      Compiled by <a href="https://github.com/blosavio/readmoi">ReadMoi</a> on 2026 April 15.<span id="uuid"><br>
       e8a546fe-1f02-4eea-97a1-e87219c93c0a</span>
     </p>
   </body>
