@@ -1,4 +1,4 @@
-(defproject com.sagevisuals/see-sharp "0-SNAPSHOT0"
+(defproject com.sagevisuals/see-sharp "0"
   :description "A slightly faster implementation of Clojure's `select-keys`"
   :url "https://github.com/blosavio/see-sharp"
   :license {:name "MIT License"
