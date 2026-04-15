@@ -4,7 +4,7 @@
     <a href="#quick">Quick summary</a><br>
     <a href="#setup">Setup</a><br>
     <a href="https://blosavio.github.io/see-sharp/index.html">API</a><br>
-    <a href="https://github.com/blosavio/chlog/blob/main/changelog.md">Changelog</a><br>
+    <a href="https://github.com/blosavio/see-sharp/blob/main/changelog.md">Changelog</a><br>
     <a href="#usage">Usage</a><br>
     <a href="https://blosavio.github.io/see-sharp/select_keys_performance.html">Performance</a><br>
     <a href="#alternatives">Alternatives</a><br>

@@ -1,7 +1,7 @@
 {:sections [{:section-name "Quick summary" :section-href "quick"}
             {:section-name "Setup"}
             {:section-name "API" :section-href "https://blosavio.github.io/see-sharp/index.html" :skip-section-load? true}
-            {:section-name "Changelog" :section-href "https://github.com/blosavio/chlog/blob/main/changelog.md" :skip-section-load? true}
+            {:section-name "Changelog" :section-href "https://github.com/blosavio/see-sharp/blob/main/changelog.md" :skip-section-load? true}
             {:section-name "Usage" :section-href "usage"}
             {:section-name "Performance" :section-href "https://blosavio.github.io/see-sharp/select_keys_performance.html" :skip-section-load? true}
             {:section-name "Alternatives" :section-href "alternatives"}
