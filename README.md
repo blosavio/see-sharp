@@ -61,7 +61,7 @@
       <p>
         Yes, an idiomatic <a href=
         "https://github.com/blosavio/see-sharp/blob/7b002b87516286bcc0a0d43122ae15a6d477e2e3/src/see_sharp/core.clj#L17-L22">variant</a> composed of
-        <code>reduce</code>, <code>conj!</code>, and transients performs <a href="https://blosavio.github.io/see-charp/select_keys_performance.html">5–20%
+        <code>reduce</code>, <code>conj!</code>, and transients performs <a href="https://blosavio.github.io/see-sharp/select_keys_performance.html">5–20%
         faster</a> than Clojure&apos;s <code>select-keys</code> on hashmaps containing up to one-million entries.
       </p>
       <p>

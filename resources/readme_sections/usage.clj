@@ -22,7 +22,7 @@
   ", "
   [:code "conj!"]
   ", and transients performs "
-  [:a {:href "https://blosavio.github.io/see-charp/select_keys_performance.html"}
+  [:a {:href "https://blosavio.github.io/see-sharp/select_keys_performance.html"}
    "5–20% faster"]
   " than Clojure's "
   [:code "select-keys"]
